@@ -39,7 +39,7 @@ const nextLabel = isWebsiteGuide ? t.shareSite : topic === 'rss' ? t.rssLabel : 
     </header>
     {guidePrompt && <AgentHandoff locale={locale} id="guide-agent-start" prompt={guidePrompt} description={t.guideAgentDescription} compact />}
     <div class="learn-body" set:html={content} />
-    {guidePrompt && <AgentHandoff locale={locale} id="guide-agent-end" prompt={guidePrompt} description={t.guideAgentDescription} compact />}
+    {guidePrompt && <AgentHandoff locale={locale} id="guide-agent-end" title={t.guideAgentClosingTitle} prompt={guidePrompt} description={t.guideAgentDescription} compact />}
     <nav class="learn-related" aria-label={t.relatedReading}>
       <h2>{t.relatedReading}</h2>
       <a href={localizedPath(locale, nextPage)}>{nextLabel}</a>

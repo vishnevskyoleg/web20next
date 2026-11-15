@@ -19,7 +19,7 @@ const address = publicUrl(feed);
     <label class="feed-label" for="feed-address">{t.rssAddress}</label>
     <input id="feed-address" class="feed-address" type="url" readonly value={address} />
     <div class="actions">
-      <button class="button" id="copy-feed" type="button" data-success={t.rssCopied} data-failure={t.rssCopyFallback}>{t.rssCopy}</button>
+      <button class="button" id="copy-feed" type="button" hidden data-success={t.rssCopied} data-failure={t.rssCopyFallback}>{t.rssCopy}</button>
       <a href={feed}>{t.rssOpen}</a>
     </div>
     <p id="feed-copy-status" class="feed-copy-status" role="status" aria-live="polite"></p>
@@ -31,6 +31,7 @@ const address = publicUrl(feed);
   const button = document.querySelector<HTMLButtonElement>('#copy-feed');
   const input = document.querySelector<HTMLInputElement>('#feed-address');
   const status = document.querySelector<HTMLElement>('#feed-copy-status');
+  if (button && input && status) button.hidden = false;
   button?.addEventListener('click', async () => {
     if (!input || !status) return;
     try {

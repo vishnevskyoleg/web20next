@@ -8,10 +8,10 @@ const home = localizedPath(locale);
 ---
 <header class="wrap nav">
   <a class="brand" href={home} aria-label={t.homeLabel}>web 2.0<span>Next</span></a>
+  <LanguagePicker locale={locale} page={page} />
   <nav class="nav-links" aria-label={t.navLabel}>
     <a href={localizedPath(locale, 'manifesto')}>{t.manifesto}</a>
     <a href={localizedPath(locale, 'websites')}>{t.directory}</a>
     <a class="button button--secondary" href={`${home}#join`}>{t.participate}</a>
   </nav>
-  <LanguagePicker locale={locale} page={page} />
 </header>

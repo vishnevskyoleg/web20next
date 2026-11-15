@@ -21,7 +21,7 @@ const t = messages(locale);
     {compact && <button type="button" class="button button--secondary agent-prompt-toggle" data-agent-toggle data-expand={t.agentViewPrompt} data-collapse={t.agentHidePrompt} aria-expanded="true" aria-controls={`${id}-prompt`} hidden>{t.agentHidePrompt}</button>}
     <div class="agent-copy-row">
       <p class="feed-copy-status" data-agent-status role="status" aria-live="polite"></p>
-      <button type="button" class="button" data-agent-copy data-success={t.agentCopied} data-failure={t.agentCopyFallback}>{t.agentCopyInstruction}</button>
+      <button type="button" class="button" data-agent-copy hidden data-success={t.agentCopied} data-failure={t.agentCopyFallback}>{t.agentCopyInstruction}</button>
     </div>
   </div>
 </section>
@@ -43,8 +43,9 @@ const t = messages(locale);
       setExpanded(false);
       toggle.addEventListener('click', () => setExpanded(toggle.getAttribute('aria-expanded') !== 'true'));
     }
-    button?.addEventListener('click', async () => {
-      if (!message || !status) return;
+    if (!button || !message || !status) return;
+    button.hidden = false;
+    button.addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(message.textContent ?? '');
         status.textContent = button.dataset.success ?? '';

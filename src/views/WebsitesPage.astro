@@ -18,7 +18,7 @@ const t = messages(locale);
       </div>
       <a class="button" href={localizedPath(locale, 'join')}>{t.shareSite}</a>
     </header>
-    <WebsiteList locale={locale} sites={sites} />
+    <WebsiteList locale={locale} sites={sites} headingLevel="h2" />
     <p class="directory-subscribe"><a class="rss-link" href={localizedPath(locale, 'subscribe')}><RssIcon />{t.rssLabel}</a></p>
   </section>
 </SiteLayout>

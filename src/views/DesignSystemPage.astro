@@ -83,7 +83,7 @@ const images = [
         <p>{t.dsAgentText}</p>
         <AgentHandoff locale={locale} id="ds-agent-example" prompt={t.githubGuidePrompt.replace('{article}', publicUrl('/github-pages'))} description={t.guideAgentDescription} compact />
         <p class="ds-example-label">{t.dsDemoLabel}</p>
-        <article class="directory-entry"><h3><a href={localizedPath(locale, 'manifesto')}>{t.dsDemoSite}</a></h3><p>{t.dsDemoDescription}</p><ul class="site-tags" aria-label={t.topicsLabel}><li>{t.dsTagWriting}</li><li>{t.dsTagMaking}</li></ul><a class="rss-link" href={localizedPath(locale, 'subscribe')}><RssIcon />{t.rssLabel}</a></article>
+        <article class="directory-entry"><h3 class="directory-entry-title"><a href={localizedPath(locale, 'manifesto')}>{t.dsDemoSite}</a></h3><p>{t.dsDemoDescription}</p><ul class="site-tags" aria-label={t.topicsLabel}><li>{t.dsTagWriting}</li><li>{t.dsTagMaking}</li></ul><a class="rss-link" href={localizedPath(locale, 'subscribe')}><RssIcon />{t.rssLabel}</a></article>
         <div class="empty-directory ds-empty"><div class="little-home" aria-hidden="true">⌂</div><div><h3>{t.directoryEmptyTitle}</h3><p>{t.directoryEmpty1}</p></div><span class="empty-label">{t.directoryEmptyStatus}</span></div>
         <div class="ds-specimen"><span class="hello">{t.heroBadge}</span><div class="badges"><span class="web-badge blue">{t.personalWebsitesBadge}</span><span class="web-badge">{t.connected}</span></div></div>
         <h3>{t.dsFooterTitle}</h3><p>{t.dsFooterText}</p><a href="#site-footer">{t.dsFooterLink}</a>
