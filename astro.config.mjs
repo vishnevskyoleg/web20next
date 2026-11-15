@@ -7,6 +7,22 @@ export default defineConfig({
   trailingSlash: 'never',
   build: { inlineStylesheets: 'never' },
   markdown: { syntaxHighlight: false },
+  security: {
+    csp: {
+      scriptDirective: {
+        resources: [
+          'https://static.cloudflareinsights.com/beacon.min.js/',
+        ],
+      },
+      directives: [
+        "default-src 'self'",
+        "object-src 'none'",
+        "base-uri 'none'",
+        "connect-src 'self' https://cloudflareinsights.com",
+        "require-trusted-types-for 'script'",
+      ],
+    },
+  },
   site: resolveSiteUrl(process.env.SITE_URL).href,
   vite: {
     plugins: [{
